@@ -1,0 +1,10 @@
+name: Telegram push notification
+
+on:
+  push:
+    branches: ['**']
+
+jobs:
+  notify:
+    uses: funpayhub/.github/.github/workflows/telegram-push-notify.yml@main
+    secrets: inherit

@@ -1,0 +1,30 @@
+name: Telegram push notification
+description: Sends a message about pushed commits to a Telegram chat (and optionally a forum topic).
+
+inputs:
+  bot-token:
+    description: Telegram bot token.
+    required: true
+  chat-id:
+    description: Chat id (e.g. -1001234567890) or @channel_username.
+    required: true
+  thread-id:
+    description: Forum topic (message thread) id. Leave empty to post to the main chat.
+    required: false
+    default: ''
+  github-token:
+    description: Token used to read commits through the GitHub API.
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - name: Send notification
+      shell: bash
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ inputs.bot-token }}
+        TELEGRAM_CHAT_ID: ${{ inputs.chat-id }}
+        TELEGRAM_THREAD_ID: ${{ inputs.thread-id }}
+        GITHUB_TOKEN: ${{ inputs.github-token }}
+      run: python3 "$GITHUB_ACTION_PATH/notify.py"

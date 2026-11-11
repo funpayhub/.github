@@ -1,0 +1,6 @@
+{
+  "name": "Telegram push notification",
+  "description": "Posts pushed commits to the organization's Telegram chat/topic.",
+  "iconName": "octicon bell",
+  "categories": ["Automation"]
+}
