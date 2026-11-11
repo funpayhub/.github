@@ -3,7 +3,7 @@ name: Telegram push notification
 on:
   workflow_call:
     secrets:
-      TELEGRAM_BOT_TOKEN:
+      TELEGRAM_NOTIFICATIONS_BOT_TOKEN:
         required: true
 
 jobs:
