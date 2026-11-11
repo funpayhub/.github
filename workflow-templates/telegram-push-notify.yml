@@ -6,5 +6,5 @@ on:
 
 jobs:
   notify:
-    uses: funpayhub/.github/.github/workflows/telegram-push-notify.yml@main
+    uses: funpayhub/.github/.github/workflows/telegram-push-notify.yml@master
     secrets: inherit

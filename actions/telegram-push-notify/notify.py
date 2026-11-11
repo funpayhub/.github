@@ -281,8 +281,6 @@ def render_message(
 def send_telegram(token: str, chat_id: str, thread_id: str, rich_html: str) -> None:
     payload: dict = {
         'chat_id': chat_id,
-        # skip_entity_detection: don't turn "#123" / "@user" in commit messages into
-        # hashtags / mentions.
         'rich_message': {'html': rich_html, 'skip_entity_detection': True},
     }
     if thread_id:
