@@ -15,6 +15,6 @@ jobs:
     steps:
       - uses: funpayhub/.github/actions/telegram-push-notify@master
         with:
-          bot-token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          chat-id: ${{ vars.TELEGRAM_CHAT_ID }}
-          thread-id: ${{ vars.TELEGRAM_THREAD_ID }}
+          bot-token: ${{ secrets.TELEGRAM_NOTIFICATIONS_BOT_TOKEN }}
+          chat-id: ${{ vars.TELEGRAM_PUSH_NOTIFICATIONS_CHAT_ID }}
+          thread-id: ${{ vars.TELEGRAM_PUSH_NOTIFICATIONS_CHAT_THREAD }}
